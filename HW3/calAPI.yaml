@@ -1,0 +1,109 @@
+swagger: "2.0"
+info:
+  title: mathOperations
+  description: Math operations API.
+  version: 1.0.0
+
+host: calculatorAPI.apigateway.calcapi.cloud.goog
+basePath: /mathOperations
+schemes:
+  - https
+  - http
+
+paths:
+
+  /add:
+    post:
+      operationId: postAddOperation
+      summary: Add two numbers.
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: numbers
+          description: Numbers to add
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-hw2-coe453-wisam-alamri-2.cloudfunctions.net/add
+
+  /sub:
+    post:
+      operationId: postSubtractOperation
+      summary: Subtract one number from another.
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: numbers
+          description: Numbers for subtraction
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-hw2-coe453-wisam-alamri-2.cloudfunctions.net/sub
+
+  /mul:
+    post:
+      operationId: postMultiplyOperation
+      summary: Multiply two numbers.
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: numbers
+          description: Numbers to multiply
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-hw2-coe453-wisam-alamri-2.cloudfunctions.net/multi
+
+  /div:
+    post:
+      operationId: postDivideOperation
+      summary: Divide one number by another.
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: numbers
+          description: Numbers for division
+          required: true
+          schema:
+            type: object
+            properties:
+              X:
+                type: number
+              Y:
+                type: number
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-hw2-coe453-wisam-alamri-2.cloudfunctions.net/div
